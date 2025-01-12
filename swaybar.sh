@@ -8,7 +8,7 @@ keyboard_input_name="1:1:AT_Translated_Set_2_keyboard"
 
 # Date and time
 date_and_week=$(date "+%Y/%m/%d (w%-V)")
-current_time=$(date "+%H:%M")
+current_time=$(date "+%r")
 
 #############
 # Commands
@@ -19,9 +19,10 @@ battery_charge=$(upower --show-info $(upower --enumerate | grep 'BAT') | grep -E
 battery_status=$(upower --show-info $(upower --enumerate | grep 'BAT') | grep -E "state" | awk '{print $2}')
 
 # Audio and multimedia
-#audio_volume=$(pactl get-sink-volume @DEFAULT_SINK@ | awk -F'/' '{print $2}' | tr -d ' %')
-audio_volume=$(pamixer --sink `pactl list sinks short | grep RUNNING | awk '{print $1}'` --get-volume)
-audio_is_muted=$(pamixer --sink `pactl list sinks short | grep RUNNING | awk '{print $1}'` --get-mute)
+audio_volume=$(pactl get-sink-volume @DEFAULT_SINK@ | awk -F'/' '{print $2}' | tr -d ' %')
+#audio_volume=$(pamixer --sink `pactl list sinks short | grep RUNNING | awk '{print $1}'` --get-volume)
+#audio_is_muted=$(pamixer --sink `pactl list sinks short | grep RUNNING | awk '{print $1}'` --get-mute)
+audio_is_muted=$(pactl get-sink-mute @DEFAULT_SINK@ | awk '{if ($2 == "no") print "false"; else print "true"}')
 media_artist=$(playerctl metadata artist)
 media_song=$(playerctl metadata title)
 player_status=$(playerctl status)

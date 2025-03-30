@@ -8,7 +8,8 @@ randomNo=0
 mapfile -t urls < <(curl -s "https://www.wallpaperflare.com/" | grep -Eo '(https://www\.wallpaperflare\.com/.+-[^"]+)')
 #getting the length of urls 
 urlLength=${#urls[@]}
-
+echo $urls
+# exit
 echo $urlLength found this much wallpaper >> /tmp/wallpaperflare.log
 
 function updateWall {
@@ -26,6 +27,8 @@ function updateWall {
     #saving the wallpaper to /tmp
     wget  -q $wallpaper -O /tmp/wall.jpg
 
+    echo "Downloaded"
+
     #saving  wallpaper
     cp /tmp/wall.jpg ~/Wallpapers/$(echo $wallpaper | grep -oP '[^/]+$')
 
@@ -38,5 +41,5 @@ function updateWall {
 while true;do
     #updating function call
     updateWall;
-    sleep 60;
+    # sleep 600;
 done

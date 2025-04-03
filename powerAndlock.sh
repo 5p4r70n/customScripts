@@ -7,15 +7,27 @@ getRandomWall(){
 	 Wallpaper=~/Wallpapers/$(ls ~/Wallpapers/ | shuf -n 1)
 }
 
+screenshotAndBlur(){
+	grim /tmp/ss.png && magick /tmp/ss.png -blur 0x10 /tmp/ss.png
+}
+
 #fucntion for lock
 lock() {
 	getRandomWall #calling random wallpaper function
 	
-	#old swaylock command
-	#swaylock -f -i $Wallpaper
+	screenshotAndBlur
 
+	#old swaylock command
+	#swaylock -f -i $Wallpaper   #for the random wallpaper from folder
+#	swaylock \
+#		-F \
+#		-f \
+#		-i /tmp/ss.png  #for the blured screenshot
+		
 	#swaylock with effects command
 	swaylock \
+		-F \
+		-f \
 		--screenshots \
 		--clock \
 		--timestr '%I:%M:%S %p'\
@@ -39,8 +51,8 @@ idle(){
 	getRandomWall #calling random wallpaper function
 	
 	swayidle -w \
-        	timeout 120 "~/myScripts/powerAndlock.sh lock" \
-        	timeout 600 'systemctl  suspend-then-hibernate' \
+        	timeout 60 "~/myScripts/powerAndlock.sh lock" \
+        	timeout 180 'systemctl  hybrid-sleep' \
         	before-sleep "~/myScripts/powerAndlock.sh lock" 
 }
 
@@ -51,7 +63,7 @@ lidClose(){
 	#for preventing quick open after closing crash
 	#it will check still lid is closed or not only after it will go to suspend state
 	if [[ $(cat /proc/acpi/button/lid/*/state | grep closed | wc -l) -eq 1  ]];then
-		systemctl suspend-then-hibernate;
+		systemctl hybrid-sleep;
 	fi
 }
 

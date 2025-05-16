@@ -1,0 +1,18 @@
+
+(swtchrd:259878): Pango-CRITICAL **: 23:16:57.694: pango_font_description_from_string: assertion 'str != NULL' failed
+
+(swtchrd:259878): Gtk-WARNING **: 23:17:02.572: Trying to measure overlay 0x6057f9f6f200 for width of 50, but it needs at least 150
+
+(swtchrd:259878): Gtk-WARNING **: 23:17:02.578: Trying to measure SwtchrAppBar 0x6057f92cc420 for width of 0, but it needs at least 100
+
+(swtchrd:259878): Gtk-WARNING **: 23:17:10.658: Trying to measure overlay 0x6057f9f6f200 for width of 275, but it needs at least 380
+
+(swtchrd:259878): Gtk-WARNING **: 23:17:10.658: Trying to measure SwtchrAppBar 0x6057fa159d90 for width of 225, but it needs at least 330
+
+(swtchrd:259878): Gtk-CRITICAL **: 00:13:30.571: gtk_widget_map: assertion '_gtk_widget_get_visible (widget)' failed
+
+(swtchrd:259878): Gtk-CRITICAL **: 11:31:35.543: gtk_widget_map: assertion '_gtk_widget_get_visible (widget)' failed
+
+(swtchrd:259878): Gtk-CRITICAL **: 11:31:36.929: gtk_widget_map: assertion '_gtk_widget_get_visible (widget)' failed
+
+(swtchrd:259878): Gtk-CRITICAL **: 13:57:29.221: gtk_widget_map: assertion '_gtk_widget_get_visible (widget)' failed

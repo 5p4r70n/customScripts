@@ -67,10 +67,10 @@ dismiss = "Escape"
 #peek = ""
 
 # Select the next window in the window switcher.
-next = "<Alt>Tab"
+peek_next = "<Alt>Tab"
 
 # Select the previous window in the window switcher.
-prev = "<Alt><Shift>Tab"
+peek_prev = "<Alt><Shift>Tab"
 
 # Select the next window in the window switcher and switch focus to it without
 # closing the window switcher.

@@ -52,9 +52,26 @@ idle(){
 	
 	swayidle -w \
         	timeout 60 "~/myScripts/powerAndlock.sh lock" \
-        	timeout 180 'systemctl  hybrid-sleep' \
+        	timeout 180 'systemctl  suspend-then-hibernate' \
         	before-sleep "~/myScripts/powerAndlock.sh lock" 
 }
+
+idleToggle(){
+	if pgrep swayidle > /dev/null; then
+  			killall swayidle # killing sway idle
+	else
+  			idle #calling idle function
+	fi
+}
+
+idleToggleStatus(){
+	if pgrep swayidle > /dev/null; then
+		echo "{\"state\":\"good\",\"text\":\"Idle On\"}" 
+	else
+		echo "{\"state\":\"critical\",\"text\":\"Idle Off\"}" 
+	fi
+}
+
 
 
 lidClose(){
@@ -63,7 +80,7 @@ lidClose(){
 	#for preventing quick open after closing crash
 	#it will check still lid is closed or not only after it will go to suspend state
 	if [[ $(cat /proc/acpi/button/lid/*/state | grep closed | wc -l) -eq 1  ]];then
-		systemctl hybrid-sleep;
+		systemctl suspend-then-hibernate;
 	fi
 }
 
@@ -76,6 +93,8 @@ case $arg in
 	lock) lock ;;
 	idle) idle ;;
 	lidClose) lidClose ;;
+	idleToggle) idleToggle ;;
+	idleToggleStatus) idleToggleStatus ;;
 	*) echo "Invalid option" ;;
 esac
 

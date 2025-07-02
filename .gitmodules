@@ -1,0 +1,3 @@
+[submodule "alacritty/themes/alabaster-theme"]
+	path = alacritty/themes/alabaster-theme
+	url = git@github.com:gargakshit/vscode-theme-alabaster-dark.git

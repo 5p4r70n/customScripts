@@ -51,7 +51,7 @@ idle(){
 	getRandomWall #calling random wallpaper function
 	
 	swayidle -w \
-        	timeout 60 "~/myScripts/powerAndlock.sh lock" \
+        	timeout 60 "~/myScripts/powerAndlock.sh lock && pactl set-sink-mute @DEFAULT_SINK@ 1" \
         	timeout 180 'systemctl  suspend-then-hibernate' \
         	before-sleep "~/myScripts/powerAndlock.sh lock" 
 }
@@ -80,7 +80,7 @@ lidClose(){
 	#for preventing quick open after closing crash
 	#it will check still lid is closed or not only after it will go to suspend state
 	if [[ $(cat /proc/acpi/button/lid/*/state | grep closed | wc -l) -eq 1  ]];then
-		systemctl suspend-then-hibernate;
+		pactl set-sink-mute @DEFAULT_SINK@ 1 && systemctl suspend-then-hibernate;
 	fi
 }
 

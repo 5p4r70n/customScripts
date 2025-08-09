@@ -1,0 +1,66 @@
+
+window {
+   background-image: url("/tmp/ss.png");
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: center;
+   background-color: black;
+}
+
+* {
+    font-family: "Hack Nerd Font", "JetBrainsMono Nerd Font", "Monospace";
+    font-size: 24px;
+    color: #00ffcc;
+    box-shadow: none;
+    border: none;
+}
+
+
+#clock-label {
+    font-size: 64px;
+    font-weight: bold;
+    color: #00ffe5;
+    text-shadow: 0 0 10px #00ffe5;
+    margin-bottom: 40px;
+}
+
+#input-label {
+    font-size: 20px;
+    color: #888;
+    margin-bottom: 10px;
+}
+
+#auth-entry {
+    background-color: rgba(20, 20, 20, 0.5);
+    border: 1px solid #00ffe5;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 8px;
+}
+
+#auth-entry:focus {
+    border-color: #ff00ff;
+    box-shadow: 0 0 10px #ff00ff;
+}
+
+#auth-button {
+    background: linear-gradient(145deg, #00ffe5, #0088aa);
+    color: black;
+    border-radius: 10px;
+    padding: 10px 20px;
+    margin-top: 20px;
+    transition: all 0.2s ease-in-out;
+}
+
+#auth-button:hover {
+    background: #00ffcc;
+    box-shadow: 0 0 15px #00ffcc;
+}
+
+#error-label {
+    color: #ff5555;
+    font-weight: bold;
+    margin-top: 20px;
+    text-shadow: 0 0 5px #ff0000;
+}
+

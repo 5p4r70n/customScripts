@@ -4,8 +4,7 @@ urls=()
 urlLength=0
 randomNo=0
 
-AccessCookie="cf_clearance=qMXjfEAvi0daDgxstPMRxzb63sbYQPeNCIiOwHnC3R4-1751457280-1.2.1.1-RgXY6dJOqEoUESCMlnQcOtgCJz8PU8pWP4VsFmDBMq_mydiqidj2cbkd5_VGeSNCcoi2GuX4m8qmRRlbAUl8c8gX.q.Q7Tv62U52h8vJiPXR8DWXIX6g_SOqv_my2Go9.4GcG19h2lHySaNWxhfU9NuSjtNSeW4Pw4RIW9zAgnKv90QQb0VmONSaZ12CKQGt91uFRSJ7_CQb2Ek3zbL8VmNGTDpU.nSw9H96n_X2.cdCzqqpJucUr3XvewOxnhNamXJa7RXqdcg9F7phJPIdnYqNNcBSynsutobSRTLrcSqDnRWUhC3n8D5sRaD9sBj1EfuZVgbvZMPXNR4vaox9uzfbl7Ltpa8iKuvG.9Kc9m8MWp3PQfPsaUNUQqwNp1XU"
-
+AccessCookie="cf_clearance=Gmhw3H0RAHTmyWqmsi_HeWtlXxzKlZAj4WGIhapPUDk-1752823068-1.2.1.1-WJzKS3J7cFxs5lzv8JlvEbusgvnpaoUhwWrXMf9.bEQxzgS7siwHZ7c3tPaHmhCS8ASKoHf3pqiF_ZMQyqMc.bVDEF5yDXJXdp4xOfjcI2sBZa6zZm7ozFtU6VJXwtTWzYMjCDHpJVgLoNmxrNh.DjSMB2F5Yo9ZBiy4jL4c9meHwIRb4i6TJtMWcR9Z_fM0FXjBYCMDnWOzdpcJFk3v5m2v3biBGbBE7YYwwQkaO88"
 test(){
     curlHeader=" --compressed \
             -H 'User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0' \
@@ -24,8 +23,6 @@ test(){
     eval "curl -sS https://www.wallpaperflare.com/ " $curlHeader
 }
 
-test
-exit
 
 updateUrls(){
 

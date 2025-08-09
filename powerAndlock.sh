@@ -11,28 +11,32 @@ screenshotAndBlur(){
 	grim /tmp/ss.png && magick /tmp/ss.png -blur 0x10 /tmp/ss.png
 }
 
-#fucntion for lock
-lock() {
-	getRandomWall #calling random wallpaper function
-	
-	screenshotAndBlur
+gtkLockFn(){
 
+	gtklock -m powerbar-module -m userinfo-module  -m playerctl-module -t '%I:%M:%S %p' --date-format '%A %d %B %Y'
+}
+
+swayLockFn(){
 	#old swaylock command
-	#swaylock -f -i $Wallpaper   #for the random wallpaper from folder
-#	swaylock \
-#		-F \
-#		-f \
-#		-i /tmp/ss.png  #for the blured screenshot
-		
-	#swaylock with effects command
+	swaylock -f -i $Wallpaper   #for the random wallpaper from folder
+	swaylock \
+		-F \
+		-f \
+		-i /tmp/ss.png  #for the blured screenshot	
+}
+
+swayLockEffectsFn(){
+
+#swayock-effects command
 	swaylock \
 		-F \
 		-f \
 		--screenshots \
 		--clock \
+		--datestr "$(date '+%A %d %B')"\
 		--timestr '%I:%M:%S %p'\
 		--indicator \
-		--indicator-radius 100 \
+		--indicator-radius 150 \
 		--indicator-thickness 7 \
 		--effect-blur 7x5 \
 		--effect-vignette 0.5:0.5 \
@@ -45,15 +49,26 @@ lock() {
 		--fade-in 0.2
 }
 
+#fucntion for lock
+lock() {
+	getRandomWall #calling random wallpaper function
+	
+	screenshotAndBlur
+	
+#	gtkLockFn	
+	
+	swayLockEffectsFn
+
+}
+
 #function for idle
 
 idle(){
 	getRandomWall #calling random wallpaper function
 	
 	swayidle -w \
-        	timeout 60 "~/myScripts/powerAndlock.sh lock && pactl set-sink-mute @DEFAULT_SINK@ 1" \
-        	timeout 180 'systemctl  suspend-then-hibernate' \
-        	before-sleep "~/myScripts/powerAndlock.sh lock" 
+        	timeout 60 '~/myScripts/powerAndlock.sh lock & pactl set-sink-mute @DEFAULT_SINK@ 1' \
+        	timeout 180 'systemctl  suspend-then-hibernate'
 }
 
 idleToggle(){

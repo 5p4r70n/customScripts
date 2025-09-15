@@ -83,6 +83,13 @@ function updateWall {
     #saving the wallpaper to /tmp
     wget  -q $wallpaper -O /tmp/wall.jpg
 
+    #for checking the wallpaper download status
+    if [[ $? -ne 0 ]];then
+        echo "wallpaper not found"
+        websiteLiveStatusCode=0
+        return
+    fi
+
     #saving  wallpaper
     cp /tmp/wall.jpg ~/Wallpapers/$(echo $wallpaper | grep -oP '[^/]+$')
 

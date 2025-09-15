@@ -79,3 +79,6 @@ peek_prev = "<Alt><Shift>Tab"
 # Select the previous window in the window switcher and switch focus to it
 # without closing the window switcher.
 #peek_prev = ""
+
+[chooser]
+source = "windows" # This will ONLY show application windows.

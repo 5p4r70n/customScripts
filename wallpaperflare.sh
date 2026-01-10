@@ -77,7 +77,9 @@ function updateWall {
 
     if [[ -z $wallpaper ]];then
         echo "wallpaper not found"
-        return
+       	#check website is still accessible
+	websitePing 
+	return
     fi
 
     #saving the wallpaper to /tmp

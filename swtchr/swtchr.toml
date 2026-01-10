@@ -11,7 +11,7 @@
 
 # Override the font family used in the window switcher.
 # Example: Fira Sans
-#font = ""
+font = "Fira Sans 12"
 
 # Order windows with the urgency hint before all other windows in the window
 # switcher.
@@ -54,6 +54,8 @@ release_keys = ["Alt_L"]
 # comprehensive list of them. Just look for the string that comes after
 # `GDK_KEY_`.
 # https://gitlab.gnome.org/GNOME/gtk/-/blob/main/gdk/gdkkeysyms.h
+scratch_pad = false
+
 [keymap]
 
 # Close the window switcher without switching windows.

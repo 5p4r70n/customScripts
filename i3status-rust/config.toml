@@ -14,6 +14,14 @@ bat_charging = "|^|"
 
 [[block]]
 block = "custom"
+command = "~/myScripts/kdeconnectStatus.sh"
+shell = "bash"
+interval=1
+json = true
+
+
+[[block]]
+block = "custom"
 command = "~/myScripts/powerAndlock.sh idleToggleStatus"
 shell = "bash"
 interval=1

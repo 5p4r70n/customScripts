@@ -35,9 +35,10 @@ export XDG_CURRENT_DESKTOP=sway
 export QT_AUTO_SCREEN_SCALE_FACTOR=1
 export QT_QPA_PLATFORM="wayland;xcb"
 export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
-export QT_QPA_PLATFORMTHEME=qt5ct
+#export QT_QPA_PLATFORMTHEME=qt5ct
+export QT_QPA_PLATFORMTHEME=kde
 
-
+set -gx PATH $PATH /home/jothish/.Garmin/ConnectIQ/Sdks/bin
 # function fish_prompt
 #   set_color cyan; echo (pwd)
 #   set_color green; echo '> '

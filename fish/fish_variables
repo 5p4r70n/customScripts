@@ -1,7 +1,8 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
 SETUVAR --export MOZ_ENABLE_WAYLAND:1
-SETUVAR --export --path PATH:/sbin\x1e/bin\x1e/usr/local/sbin\x1e/usr/local/bin\x1e/usr/sbin\x1e/usr/bin\x1e/usr/lib/jvm/default/bin\x1e/usr/bin/site_perl\x1e/usr/bin/vendor_perl\x1e/usr/bin/core_perl\x1e/usr/lib/rustup/bin\x1e/home/jothish/\x2ecargo/bin/
+SETUVAR --export --path PATH:/home/jothish/\x2ecargo/bin\x1e/sbin\x1e/bin\x1e/usr/local/sbin\x1e/usr/local/bin\x1e/usr/sbin\x1e/usr/bin\x1e/usr/lib/jvm/default/bin\x1e/usr/bin/site_perl\x1e/usr/bin/vendor_perl\x1e/usr/bin/core_perl\x1e/usr/lib/rustup/bin\x1e/home/jothish/\x2eGarmin/ConnectIQ/Sdks/connectiq\x2dsdk\x2dlin\x2d9\x2e1\x2e0\x2d2026\x2d03\x2d09\x2d6a872a80b/bin
+SETUVAR --export QT_QPA_PLATFORMTHEME:kde
 SETUVAR VIRTUAL_ENV_DISABLE_PROMPT:true
 SETUVAR --export XDG_CURRENT_DESKTOP:Sway
 SETUVAR --export _JAVA_AWT_WM_NONREPARENTING:1

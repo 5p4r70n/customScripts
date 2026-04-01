@@ -100,7 +100,7 @@ critical_mem=90
 
 [[block]]
 block = "sound"
-format = " $icon  $output_name{ $volume|}"
+format = " $icon  $output_name{ $volume |}"
 [[block.click]]
 button = "left"
 cmd = "pavucontrol"
